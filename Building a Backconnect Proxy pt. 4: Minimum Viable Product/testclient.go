@@ -3,8 +3,8 @@ package main
 import (
 	"crypto/tls"
 	"fmt"
+	"io"
 	"net/http"
-	"net/http/httputil"
 	"net/url"
 	"os"
 	"time"
@@ -52,10 +52,11 @@ func main() {
 
 	defer resp.Body.Close()
 
-	dump, err := httputil.DumpResponse(resp, true)
+	data, err := io.ReadAll(resp.Body)
 	if err != nil {
 		panic(err)
 	}
+
 
 	fmt.Printf("%q\n", dump)
 }
