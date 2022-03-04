@@ -76,7 +76,8 @@ func main() {
 		return goproxy.MitmConnect, host
 	})
 
-// An alternative would be to reject all connect requests.	/*proxy.OnRequest().HandleConnectFunc(func(host string, ctx *goproxy.ProxyCtx) (*goproxy.ConnectAction, string) {
+    // An alternative would be to reject all connect requests.	
+    /*proxy.OnRequest().HandleConnectFunc(func(host string, ctx *goproxy.ProxyCtx) (*goproxy.ConnectAction, string) {
 		return goproxy.RejectConnect, host
 	})*/
 
